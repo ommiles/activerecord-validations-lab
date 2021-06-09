@@ -1,4 +1,8 @@
 class Author < ActiveRecord::Base
-    include ActiveModel::Validations
-    validates_with AuthorValidator
+# have a name -- presence
+# no same names -- uniqueness
+# phone number -- length
+
+    validates :name, presence: true, uniqueness: true
+    validates :phone_number, length: { is: 10 }
 end
