@@ -4,7 +4,5 @@ class PostValidator < ActiveModel::Validator
         unless record.title.present? && record.title.match?(/Won't Believe/i || /Secret/i || /Top [0-9]*/i || /Guess/i)
           record.errors.add(:title, "must be clickbait")
         end
-        # unless record.title.present?
-        # end
       end
 end
